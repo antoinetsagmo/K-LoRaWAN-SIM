@@ -37,42 +37,52 @@ perl generate_terrain.pl terrain_side_size_(m) num_of_nodes num_of_gateways > te
 perl LoRaWAN.pl packets_per_hour simulation_time(secs) ack_policy(1-3) terrain.txt
 ```
 
-### Example with 1000x1000m terrain size, 100 nodes, 5 gateways, 1pkt/5min, ~3h sim time:
+### Example with 1000x1000m terrain size, 1000 nodes, 10 gateways, 1pkt/5min, ~3h sim time:
 ```
-perl generate_terrain.pl 1000 100 5 > terrain.txt
+perl generate_terrain.pl 1000 1000 10 > terrain.txt
 perl LoRaWAN.pl 12 10000 2 terrain.txt
 ```
 
 ### Output sample:  
 ```
-Simulation time = 10000.150 secs
-Avg node consumption = 47.85191 mJ
-Min node consumption = 20.75202 mJ
-Max node consumption = 97.19977 mJ
-Total number of transmissions = 91548
-Total number of re-transmissions = 77286
-Total number of unique transmissions = 19573
-Total packets delivered = 72176
-Total packets acknowledged = 13762
-Total confirmed dropped = 5311
+(base) tsagmo@tsagmo-Legion-Y540-15IRH:~/Documents/LoRaWAN-SIM_Kmeans/K-LoRaWAN-SIM$ perl generate_terrain.pl 1000 1000 10 > terrain.txt
+(base) tsagmo@tsagmo-Legion-Y540-15IRH:~/Documents/LoRaWAN-SIM_Kmeans/K-LoRaWAN-SIM$ perl LoRaWAN.pl 12 10000 2 terrain.txt
+Simulation time = 10000.302 secs
+Avg node consumption = 9.97036 mJ
+Min node consumption = 6.99126 mJ
+Max node consumption = 28.59852 mJ
+Total number of transmissions = 47769
+Total number of re-transmissions = 13859
+Total number of unique transmissions = 34027
+Total packets delivered = 43779
+Total packets acknowledged = 32910
+Total confirmed dropped = 117
 Total unconfirmed packets dropped = 0
-Packet Delivery Ratio = 0.70311
-Packet Reception Ratio = 0.78840
-No GW available in RX1 = 67393 times
-No GW available in RX1 or RX2 = 57897 times
-Total downlink time = 2840.29696000017 sec
-Script execution time = 5.5947 secs
+Packet Delivery Ratio = 0.96717
+Packet Reception Ratio = 0.91647
+No GW available in RX1 = 33082 times
+No GW available in RX1 or RX2 = 6183 times
+Total downlink time = 5677.98246400372 sec
+Script execution time = 10.2566 secs
 -----
-GW A sent out 8033 acks
-GW B sent out 6246 acks
-Mean downlink fairness = 0.379
-Stdv of downlink fairness = 0.303
+GW A sent out 3657 acks
+GW B sent out 3925 acks
+GW C sent out 3362 acks
+GW D sent out 4126 acks
+GW E sent out 3586 acks
+GW F sent out 4060 acks
+GW G sent out 3787 acks
+GW H sent out 3271 acks
+GW I sent out 3838 acks
+GW J sent out 3984 acks
+Mean downlink fairness = 0.905
+Stdv of downlink fairness = 0.072
 -----
-# of nodes with SF7: 54
-# of nodes with SF8: 58
-# of nodes with SF9: 104
-# of nodes with SF10: 116
-# of nodes with SF11: 97
-# of nodes with SF12: 71
-Avg SF = 9.714
-````
+# of nodes with SF7: 168
+# of nodes with SF8: 92
+# of nodes with SF9: 124
+# of nodes with SF10: 233
+# of nodes with SF11: 230
+# of nodes with SF12: 153
+Avg SF = 9.724
+
